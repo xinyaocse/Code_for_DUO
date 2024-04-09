@@ -12,13 +12,13 @@ Here we provide two attack methods in the file "main":
 >1. Group_Sparse_AE_attack is the codes of the new group sparse AE attack method proposed by our current work to improve the query efficiency
 
 ```python
-python main.py --s_net C3D --t_net I3D --gpus '0' --path 'group' --group 'P_spa' --dataset_name 'UCF101'&   # Pixel_Sparse_AE_attack
+python main.py --s_net C3D --t_net I3D --gpus '0' --path 'Pixel_Sparse_AE_attack' --group 'P_spa' --dataset_name 'UCF101'&   # Pixel_Sparse_AE_attack
 ```
 
 or
 
 ```python
-python main.py --s_net C3D --t_net I3D --gpus '0' --path 'group' --group 'G_spa' --dataset_name 'UCF101'&   # Pixel_Sparse_AE_attack    # Group_Sparse_AE_attack
+python main.py --s_net C3D --t_net I3D --gpus '0' --path 'Group_Sparse_AE_attack' --group 'G_spa' --dataset_name 'UCF101'&   # Group_Sparse_AE_attack
 ```
 
 
