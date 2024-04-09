@@ -106,7 +106,7 @@ def spa_parser(parser):
 
     ############trade off paramters
     # model hyper-parameters
-    parser.add_argument('--lambdaL2', type=float, default=1e-5, choices=['0', '1', '2'])
+    parser.add_argument('--lambdaL2', type=float, default=1e-5)
     parser.add_argument('--lambdaL3', type=float, default=1e-5)
 
     parser.add_argument('--lambda2_upper_bound', type=float, default=0,
