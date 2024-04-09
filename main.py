@@ -121,7 +121,7 @@ def attack(parser):
             hsab_attack = Group_Sparse_AE_attack(s_net, t_net, dataset, dataset, s_db, s_dl, t_db, t_dl, parser, device, classes)
             hsab_attack.attack()
           
-           # Pixel wise sparse AE attack
+          # Pixel wise sparse AE attack
         elif parser.group == "P_spa":
             hsa_attack = Pixel_Sparse_AE_attack(s_net, t_net, dataset, dataset, s_db, s_dl, t_db, t_dl, parser, device, classes)
             hsa_attack.attack()
