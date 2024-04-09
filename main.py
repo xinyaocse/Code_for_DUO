@@ -1,6 +1,7 @@
 """
 The codes are from DUO's work
-Implementation of Hybrid Black-box Sparse Adversarial Example Attack on Video Retrieval System
+Pixel_Sparse_attack the code of the point sparse adversarial sample attack method proposed by our previous work for the video retrieval system,
+Group_Sparse_attack the code of the new attack method proposed by our current work to improve the query efficiency
 """
 
 import json
@@ -116,13 +117,10 @@ def attack(parser):
 
     if parser.attack_method in ['HSA_SIMBA_SPA', 'HSA_SIMBA_RAND', 'HSA_SIMBA_HEURISTIC']:
         if parser.group == 'G_spa':
-            hsab_attack = HSAB_attack(s_net, t_net, dataset, dataset, s_db, s_dl, t_db, t_dl, parser, device, classes)
+            hsab_attack = Group_Sparse_attack(s_net, t_net, dataset, dataset, s_db, s_dl, t_db, t_dl, parser, device, classes)
             hsab_attack.attack()
-        elif parser.group == "GP_spa":
-            hsagp_attack = HSAGP_attack(s_net, t_net, dataset, dataset, s_db, s_dl, t_db, t_dl, parser, device, classes)
-            hsagp_attack.attack()
-        else:
-            hsa_attack = HSA_attack(s_net, t_net, dataset, dataset, s_db, s_dl, t_db, t_dl, parser, device, classes)
+        elif parser.group == "P_spa":
+            hsa_attack = Pixel_Sparse_attack(s_net, t_net, dataset, dataset, s_db, s_dl, t_db, t_dl, parser, device, classes)
             hsa_attack.attack()
 
 
