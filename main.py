@@ -1,5 +1,5 @@
 """
-The codes are from Enlang Li's work
+The codes are from DUO's work
 Implementation of Hybrid Black-box Sparse Adversarial Example Attack on Video Retrieval System
 """
 
@@ -9,8 +9,8 @@ from torch.distributions import transforms
 
 from network.symbol_builder import dataset_cfg, net_cfg
 from attack.HEUR_ATT import HEUR_attack
-from attack.HSA_attack import HSA_attack
-from attack.HSAB_attack import HSAB_attack
+from attack.Pixel_Sparse_attack import Pixel_Sparse_attack
+from attack.Group_Sparse_attack import Group_Sparse_attack
 
 
 from utils.data_loader import *
