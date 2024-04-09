@@ -1,6 +1,5 @@
 """
 The codes are from DUO's work
-The code of the pixel sparse adversarial AE attack method proposed by our previous work for the video retrieval system
 """
 
 import os
