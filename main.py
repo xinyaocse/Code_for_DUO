@@ -1,7 +1,7 @@
 """
 The codes are from DUO's work
-Pixel_Sparse_attack the is code of the pixel sparse adversarial AE attack method proposed by our previous work for the video retrieval system,
-Group_Sparse_attack the is code of the new attack method proposed by our current work to improve the query efficiency
+Pixel_Sparse_AE_attack the is code of the pixel sparse adversarial AE attack method proposed by our previous work for the video retrieval system,
+Group_Sparse_AE_attack the is code of the new attack method proposed by our current work to improve the query efficiency
 """
 
 import json
@@ -10,8 +10,8 @@ from torch.distributions import transforms
 
 from network.symbol_builder import dataset_cfg, net_cfg
 from attack.HEUR_ATT import HEUR_attack
-from attack.Pixel_Sparse_attack import Pixel_Sparse_attack
-from attack.Group_Sparse_attack import Group_Sparse_attack
+from attack.Pixel_Sparse_attack import Pixel_Sparse_AE_attack
+from attack.Group_Sparse_attack import Group_Sparse_AE_attack
 
 
 from utils.data_loader import *
@@ -117,10 +117,10 @@ def attack(parser):
 
     if parser.attack_method in ['HSA_SIMBA_SPA', 'HSA_SIMBA_RAND', 'HSA_SIMBA_HEURISTIC']:
         if parser.group == 'G_spa':
-            hsab_attack = Group_Sparse_attack(s_net, t_net, dataset, dataset, s_db, s_dl, t_db, t_dl, parser, device, classes)
+            hsab_attack = Group_Sparse_AE_attack(s_net, t_net, dataset, dataset, s_db, s_dl, t_db, t_dl, parser, device, classes)
             hsab_attack.attack()
         elif parser.group == "P_spa":
-            hsa_attack = Pixel_Sparse_attack(s_net, t_net, dataset, dataset, s_db, s_dl, t_db, t_dl, parser, device, classes)
+            hsa_attack = Pixel_Sparse_AE_attack(s_net, t_net, dataset, dataset, s_db, s_dl, t_db, t_dl, parser, device, classes)
             hsa_attack.attack()
 
 
