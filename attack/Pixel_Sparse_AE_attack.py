@@ -19,9 +19,9 @@ import math
 from attack.base import *
 
 
-class pixel_Sparse_attack(TrainBase):
+class pixel_Sparse_AE_attack(TrainBase):
     def __init__(self, s_net, t_net, query_iter, target_iter, s_db, s_dl, t_db, t_dl, parser, device, classes):
-        super(pixel_Sparse_attack, self).__init__(s_net, t_net, query_iter, target_iter, s_db, s_dl, t_db, t_dl, parser, device,
+        super(pixel_Sparse_AE_attack, self).__init__(s_net, t_net, query_iter, target_iter, s_db, s_dl, t_db, t_dl, parser, device,
                                          classes)
         pass
 
