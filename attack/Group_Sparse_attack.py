@@ -256,7 +256,7 @@ class Group_Sparse_attack(TrainBase):
         max_SPA = self.args.max_spa
 
         if self.args.attack_method == 'HSA_SIMBA_RAND':  # Pick a random spot
-            # 可替换为查找文件确定 k。
+            # 
             printf(f'Running Rand Select Mec...........')
             max_queries_iterval = int(max_queries / interval)
             indices = torch.randperm(
