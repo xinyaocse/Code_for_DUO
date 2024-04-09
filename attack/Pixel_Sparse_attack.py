@@ -274,7 +274,7 @@ class pixel_Sparse_attack(TrainBase):
 
                 # try negative directions
 
-                theta_left = trans(self.expand_vector(left_vec, expand_dims))  # 将向量还原成视频
+                theta_left = trans(self.expand_vector(left_vec, expand_dims))  # 
                 adv_left = torch.max(torch.min(theta_left + adv_video, query + max_p), query - max_p).clamp(0, 255)
 
                 left_probs, left_probs1, left_probs2, _ = self.get_probs(adv_left, return_loss12=True)
@@ -378,7 +378,7 @@ class pixel_Sparse_attack(TrainBase):
         return result
 
     @staticmethod
-    def norm2(x):  # 定义2范数
+    def norm2(x):  # 
         x = x.squeeze(dim=0)
         assert len(list(x.size())) == 4  # [c, t, h, w]
         x = x.permute(1, 0, 2, 3)  # [t, c, h, w]
@@ -708,7 +708,7 @@ class pixel_Sparse_attack(TrainBase):
                 cur_step = max(cur_step * args.lr_decay_factor, args.lr_min)
 
             if cur_iter % args.tick_loss_T == 0 and cur_iter % 1000 == 0:
-                with torch.no_grad():   # 禁用梯度
+                with torch.no_grad():   # 
                     test_tmp = (mask_I.detach() > 0.5).float() * mask_F * theta
                     test_adv_fea = model(query + test_tmp)
 
