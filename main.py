@@ -116,9 +116,12 @@ def attack(parser):
 
 
     if parser.attack_method in ['HSA_SIMBA_SPA', 'HSA_SIMBA_RAND', 'HSA_SIMBA_HEURISTIC']:
+          # Group wise sparse AE attack
         if parser.group == 'G_spa':
             hsab_attack = Group_Sparse_AE_attack(s_net, t_net, dataset, dataset, s_db, s_dl, t_db, t_dl, parser, device, classes)
             hsab_attack.attack()
+          
+           # Pixel wise sparse AE attack
         elif parser.group == "P_spa":
             hsa_attack = Pixel_Sparse_AE_attack(s_net, t_net, dataset, dataset, s_db, s_dl, t_db, t_dl, parser, device, classes)
             hsa_attack.attack()
