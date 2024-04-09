@@ -10,8 +10,8 @@ from torch.distributions import transforms
 
 from network.symbol_builder import dataset_cfg, net_cfg
 from attack.HEUR_ATT import HEUR_attack
-from attack.Pixel_Sparse_attack import Pixel_Sparse_AE_attack
-from attack.Group_Sparse_attack import Group_Sparse_AE_attack
+from attack.Pixel_Sparse_AE_attack import Pixel_Sparse_AE_attack
+from attack.Group_Sparse_AE_attack import Group_Sparse_AE_attack
 
 
 from utils.data_loader import *
