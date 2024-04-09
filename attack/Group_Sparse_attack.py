@@ -1,6 +1,6 @@
 """
 The codes are from DUO's work
-Implementation of Hybrid Black-box Sparse Adversarial Example Attack on Video Retrieval System
+Group_Sparse_attack the code of the new attack method proposed by our current work to improve the query efficiency
 """
 
 import os
